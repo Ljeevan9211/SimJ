@@ -1,0 +1,12 @@
+Package: SimJ
+Title: Simulation for study design in wildlife research
+Version: 0.0.0.9000
+Authors: Jeevan Rai <Ljeevan9211@gmail.com>
+Maintainer: Jeevan Rai <Ljeevan9211@gmail.com>
+Description: Functions to simulate for wildlife researchers who don't want/know the gory details.
+Depends: R (>= 3.5.1)
+License: NONE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Roxygen: list(markdown = TRUE)
