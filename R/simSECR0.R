@@ -14,7 +14,7 @@
 #' @examples simSECR0(0.003, 200, 50, trapD = x)
 
 
-simSECR0 <- function(Den, Buf, G0, S, iter = 100, occasions, trapD){
+simSECR0 <- function(Den, Buf, G0, S, iter = 100, occasions = 15, trapD){
 require(secr)
 library(secr)
 require(wiqid)
