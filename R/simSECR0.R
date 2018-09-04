@@ -23,11 +23,11 @@ library(wiqid)
 ## Study design model
 Density <- numeric(iter) # creating pockets to store our density estimates
 minDensity <- 40
-buffer <- B # Buffer you want to use
+buffer <- Buf # Buffer you want to use
 
 # Now going for the loop
 for(i in 1:iter){
-  y <- sim.capthist(x, popn = list(D = Den, buffer = Buf), detectpar = list(g0 = G0, sigma = S),noccasions = occasions)# generating simulated capture history using trap data and biological model
+  y <- sim.capthist(trapD, popn = list(D = Den, buffer = Buf), detectpar = list(g0 = G0, sigma = S),noccasions = occasions)# generating simulated capture history using trap data and biological model
   plot(y, tracks = TRUE, varycol = TRUE, icolours = c("green", "red", "black","yellow","orange","white","blue","magenta","cyan","grey"))
   if(max((animalID(y))) > 6){
     stt <- secr.fit(y, buffer = 100, ncores = 3)
