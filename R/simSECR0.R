@@ -11,10 +11,10 @@
 #' @return Plots with estimates of density as per your study desing
 #' @export
 #' @examples x<- read.traps("cameratrapSECR1.txt", detector = "proximity")
-#' @examples simSECR0(0.003, 200, 50, trapD = x)
+#' @examples simSECR0(0.003, 200, 0.1, 50, 100, 12, trapD = x)
 
 
-simSECR0 <- function(Den, Buf, G0, S, iter = 100, occasions = 15, trapD){
+simSECR0 <- function(Den = 1, Buf = 200, G0 = 0.1, S = 50, iter = 100, occasions = 15, trapD){
 require(secr)
 library(secr)
 require(wiqid)
@@ -30,7 +30,7 @@ for(i in 1:iter){
   y <- sim.capthist(trapD, popn = list(D = Den, buffer = Buf), detectpar = list(g0 = G0, sigma = S),noccasions = occasions)# generating simulated capture history using trap data and biological model
   plot(y, tracks = TRUE, varycol = TRUE, icolours = c("green", "red", "black","yellow","orange","white","blue","magenta","cyan","grey"))
   if(max((animalID(y))) > 6){
-    stt <- secr.fit(y, buffer = 100, ncores = 3)
+    stt <- secr.fit(y, buffer = Buf, ncores = 3)
     values <- predict(stt)
     Density[i] <- values$estimate[1] # storing the value of density estimate in our pocket
   }
