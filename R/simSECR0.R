@@ -19,6 +19,8 @@ require(secr)
 library(secr)
 require(wiqid)
 library(wiqid)
+require(parallel)
+library(parallel)
 
 ## Study design model
 Density <- numeric(iter) # creating pockets to store our density estimates
@@ -30,7 +32,7 @@ for(i in 1:iter){
   y <- sim.capthist(trapD, popn = list(D = Den, buffer = Buf), detectpar = list(g0 = G0, sigma = S),noccasions = occasions)# generating simulated capture history using trap data and biological model
   plot(y, tracks = TRUE, varycol = TRUE, icolours = c("green", "red", "black","yellow","orange","white","blue","magenta","cyan","grey"))
   if(max((animalID(y))) > 6){
-    stt <- secr.fit(y, buffer = Buf, ncores = 3)
+    stt <- secr.fit(y, buffer = Buf, ncores = detectCores() - 1)
     values <- predict(stt)
     Density[i] <- values$estimate[1] # storing the value of density estimate in our pocket
   }
