@@ -10,8 +10,8 @@
 #' @param trapD Your detector design. Assing this with x <- read.traps("cameratrap.txt", detector ="proximity")
 #' @return Plots with estimates of density as per your study desing
 #' @export
-#' @examples x<- read.traps("cameratrapSECR1.txt", detector = "proximity")
-#' @examples simSECR0(0.003, 200, 0.1, 50, 100, 12, trapD = x)
+#' @examples x<- read.traps("cameratrapSECR1.txt", detector = "proximity") # assigning your trap data
+#' @examples simSECR0(0.003, 200, 0.1, 50, 100, 12, trapD = x) #running your simulations
 
 
 simSECR0 <- function(Den = 1, Buf = 200, G0 = 0.1, S = 50, iter = 100, occasions = 15, trapD){
@@ -30,7 +30,9 @@ buffer <- Buf # Buffer you want to use
 # Now going for the loop
 for(i in 1:iter){
   y <- sim.capthist(trapD, popn = list(D = Den, buffer = Buf), detectpar = list(g0 = G0, sigma = S),noccasions = occasions)# generating simulated capture history using trap data and biological model
-  plot(y, tracks = TRUE, varycol = TRUE, icolours = c("green", "red", "black","yellow","orange","white","blue","magenta","cyan","grey"))
+  if(max(animalID(y)) > 3){
+    plot(y, tracks = TRUE, varycol = TRUE, icolours = c("green", "red", "black","yellow","orange","white","blue","magenta","cyan","grey"))
+    }
   if(max((animalID(y))) > 6){
     stt <- secr.fit(y, buffer = Buf, ncores = detectCores() - 1)
     values <- predict(stt)
