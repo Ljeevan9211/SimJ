@@ -2,4 +2,3 @@
 
 export(simOCCSS0)
 export(simSECR0)
-export(PopEst)
