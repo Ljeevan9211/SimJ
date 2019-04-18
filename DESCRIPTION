@@ -1,7 +1,7 @@
 Package: SimJ
 Title: Simulation for study design in wildlife research
 Version: 0.0.0.9000
-Authors: Jeevan Rai <Ljeevan9211@gmail.com>
+Author: Jeevan Rai <Ljeevan9211@gmail.com>
 Maintainer: Jeevan Rai <Ljeevan9211@gmail.com>
 Description: Functions to simulate for wildlife researchers who don't want/know the gory details.
 Depends: R (>= 3.4.0)
