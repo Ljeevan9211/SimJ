@@ -4,7 +4,8 @@
 \alias{simSECR0}
 \title{Simulate Density estimates from SECR}
 \usage{
-simSECR0(Den, Buf, G0, S, iter = 100, occasions, trapD)
+simSECR0(Den = 1, Buf = 200, G0 = 0.1, S = 50, iter = 100,
+  occasions = 15, trapD)
 }
 \arguments{
 \item{Den}{True density of your interest species in the study area}
@@ -28,6 +29,6 @@ Plots with estimates of density as per your study desing
 Gives the estimates of your simulated study design from 1000 simulations for better occupancy study designs.
 }
 \examples{
-x<- read.traps("cameratrapSECR1.txt", detector = "proximity")
-simSECR0(0.003, 200, 50, trapD = x)
+x<- read.traps("cameratrapSECR1.txt", detector = "proximity") # assigning your trap data
+simSECR0(0.003, 200, 0.1, 50, 100, 12, trapD = x) #running your simulations
 }
