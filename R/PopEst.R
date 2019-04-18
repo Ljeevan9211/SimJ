@@ -11,7 +11,7 @@
 #' @examples r <- c(1, 7, 8, 8, 10, 6)	# no. of marked ind. caught
 #' @examples M <- 54 # total marked ind. captured
 #' @examples # Using the custom function
-#' @examples PopEst(M, c,R )
+#' @examples PopEst(M, c, r)
 #' @examples PopEst(34, 24, 3) # for single survey
 # Better function with built-in loop so that we don't have to use for function later.
 

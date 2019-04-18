@@ -25,6 +25,6 @@ c <- c(46, 72, 50, 79, 91, 55) # total samples
 r <- c(1, 7, 8, 8, 10, 6)	# no. of marked ind. caught
 M <- 54 # total marked ind. captured
 # Using the custom function
-PopEst(M, c,R )
+PopEst(M, c, r)
 PopEst(34, 24, 3) # for single survey
 }
