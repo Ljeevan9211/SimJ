@@ -14,9 +14,6 @@
 #' @examples # Using the custom function
 #' @examples PopEst(M, c,R )
 #' @examples PopEst(34, 24, 3) # for single survey
-
-
-
 # Better function with built-in loop so that we don't have to use for function later.
 
 # creating a function to have all the values and calculate the normal and seber
