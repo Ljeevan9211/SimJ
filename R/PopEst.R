@@ -47,7 +47,7 @@ PopEst <- function(M, c,r){ # M is marked ind, c is captured, r is recaptured
   barplot(DT,
           main = "Population estimates with Lincoln-Peterson and Seber methods",
           beside = TRUE,
-          ylim = c(0, max(DT) + 100),
+          ylim = c(0, max(DT) * 1.1),
           xlab = "Samples",
           col = c("blue", "green")
   )
