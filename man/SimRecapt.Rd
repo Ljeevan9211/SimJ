@@ -23,8 +23,13 @@ Gives the recaptures when given population, marked individuals and sample size
 }
 \examples{
 # A simple situation with population of 1000 with 88 marked and sample size 128
-SimPop(1000, 88, 128)
+SimRecapt(1000, 88, 128)
+
 # Save the recaptures and do a population estimation
-r <- SimPop(300, 72, 50, 10)
+N <- 300
+M <- 72
+c <- 50
+iter <- 10
+r <- SimRecapt(N, M, c, iter)
 PopEst(M, c, r)
 }

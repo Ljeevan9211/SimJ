@@ -10,13 +10,20 @@
 #' @examples c <- c(46, 72, 50, 79, 91, 55) # total samples
 #' @examples r <- c(1, 7, 8, 8, 10, 6)	# no. of marked ind. caught
 #' @examples M <- 54 # total marked ind. captured
+#'
 #' @examples # Using the custom function
 #' @examples PopEst(M, c, r)
 #' @examples PopEst(34, 24, 3) # for single survey
+#'
 #' @examples # A simple situation with population of 1000 with 88 marked and sample size 128
-#' @examples SimPop(1000, 88, 128)
+#' @examples SimRecapt(1000, 88, 128)
+#'
 #' @examples # Save the recaptures and do a population estimation
-#' @examples r <- SimPop(300, 72, 50, 10)
+#' @examples N <- 300
+#' @examples M <- 72
+#' @examples c <- 50
+#' @examples iter <- 10
+#' @examples r <- SimRecapt(N, M, c, iter)
 #' @examples PopEst(M, c, r)
 # Better function with built-in loop so that we don't have to use for function later.
 
@@ -25,6 +32,7 @@ PopEst <- function(M, c,r){ # M is marked ind, c is captured, r is recaptured
   message("Population estimation using")
   message("Lincoln-Peterson and Seber methods with confidence interval")
   message("")
+  if(class(r) == "data.frame")r <- as.numeric(r)
   DT <- matrix(nrow = 2,ncol = length(c))
   rownames(DT) <- c("Lincoln-Peterson","Seber")
   colnames(DT) <- 1:length(c)

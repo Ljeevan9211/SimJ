@@ -24,12 +24,19 @@ Gives the estimates and plots from two different methods of population estimate 
 c <- c(46, 72, 50, 79, 91, 55) # total samples
 r <- c(1, 7, 8, 8, 10, 6)	# no. of marked ind. caught
 M <- 54 # total marked ind. captured
+
 # Using the custom function
 PopEst(M, c, r)
 PopEst(34, 24, 3) # for single survey
+
 # A simple situation with population of 1000 with 88 marked and sample size 128
-SimPop(1000, 88, 128)
+SimRecapt(1000, 88, 128)
+
 # Save the recaptures and do a population estimation
-r <- SimPop(300, 72, 50, 10)
+N <- 300
+M <- 72
+c <- 50
+iter <- 10
+r <- SimRecapt(N, M, c, iter)
 PopEst(M, c, r)
 }

@@ -8,9 +8,14 @@
 #' @return Recaptures of marked individuals for the sample size
 #' @export
 #' @examples # A simple situation with population of 1000 with 88 marked and sample size 128
-#' @examples SimPop(1000, 88, 128)
+#' @examples SimRecapt(1000, 88, 128)
+#'
 #' @examples # Save the recaptures and do a population estimation
-#' @examples r <- SimPop(300, 72, 50, 10)
+#' @examples N <- 300
+#' @examples M <- 72
+#' @examples c <- 50
+#' @examples iter <- 10
+#' @examples r <- SimRecapt(N, M, c, iter)
 #' @examples PopEst(M, c, r)
 
 # Creating a function to return the recaptures
