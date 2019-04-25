@@ -10,7 +10,7 @@
 #' @examples SimPop(1000, 88, 128)
 
 # Creating a function to return the recaptures
-SimPop <- function(N, M,c){ 			# N is population, M is marked ind and c is captured individuals in second trapping
+SimRecapt <- function(N, M,c){ 			# N is population, M is marked ind and c is captured individuals in second trapping
   Prob <- M/N 						# this is the probability of recapture (marked individuals/total population)
   recapt <- rbinom(1, c, Prob)		# recaptures are binomal probabilities
   message("Total population: ", N, "     Marked individual: ", M)
