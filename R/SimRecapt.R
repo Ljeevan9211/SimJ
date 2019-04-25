@@ -24,7 +24,6 @@ SimRecapt <- function(N, M,c, iter = 1){ 			# N is population, M is marked ind a
   Recapt <- rbinom(iter, c, Prob)		# recaptures are binomal probabilities
   message("Total population: ", N, "     Marked individual: ", M)
   message("Sample size: ", c, "          Probability of recaptures: ", Prob)
-  message("Simulated recaptures: ", Recapt)
-  Recaptures <- data.frame(Recaptures = Recapt)
+  Recaptures <- data.frame(Recaptures = as.numeric(Recapt))
   return(Recaptures)
 }

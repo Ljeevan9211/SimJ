@@ -32,11 +32,12 @@ PopEst <- function(M, c,r){ # M is marked ind, c is captured, r is recaptured
   message("Population estimation using")
   message("Lincoln-Peterson and Seber methods with confidence interval")
   message("")
-  if(class(r) == "data.frame")r <- as.numeric(r)
-  DT <- matrix(nrow = 2,ncol = length(c))
+  if(class(r) == "data.frame")r <- as.numeric(r$Recaptures)
+  if(length(c) == 1)c[1:length(r)] <- c
+  DT <- matrix(nrow = 2, ncol = length(r))
   rownames(DT) <- c("Lincoln-Peterson","Seber")
-  colnames(DT) <- 1:length(c)
-  for(i in 1:length(c)){
+  colnames(DT) <- 1:length(r)
+  for(i in 1:length(r)){
     norm <- ((M*c[i])/r[i])
     seb <- (((M+1)*(c[i]+1))/(r[i]+1)) - 1
     Var <- (((M+1)*(c[i]+1)*(M-r[i])*(c[i]-r[i]))/(((r[i]+1)^2)*(r[i]+2)))
