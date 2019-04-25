@@ -20,6 +20,6 @@ Recaptures of marked individuals for the sample size
 Gives the recaptures when given population, marked individuals and sample size
 }
 \examples{
-# A simple situation with 1000 individauls in a population with 88 marked individuals and sample size 128
+# A simple situation with population of 1000 with 88 marked and sample size 128
 SimPop(1000, 88, 128)
 }

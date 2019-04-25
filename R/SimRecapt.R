@@ -6,7 +6,7 @@
 #' @param c Total individuals captured in the second trapping
 #' @return Recaptures of marked individuals for the sample size
 #' @export
-#' @examples # A simple situation with 1000 individauls in a population with 88 marked individuals and sample size 128
+#' @examples # A simple situation with population of 1000 with 88 marked and sample size 128
 #' @examples SimPop(1000, 88, 128)
 
 # Creating a function to return the recaptures
