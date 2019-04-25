@@ -4,7 +4,7 @@
 \alias{SimRecapt}
 \title{Looking at how number of marked individuals affect the recaptures in Mark-Recapture estimates}
 \usage{
-SimRecapt(N, M, c)
+SimRecapt(N, M, c, iter = 1)
 }
 \arguments{
 \item{N}{Total population of the species}
@@ -12,6 +12,8 @@ SimRecapt(N, M, c)
 \item{M}{Marked individuals at the first trapping or initially}
 
 \item{c}{Total individuals captured in the second trapping}
+
+\item{iter}{Total number of iterations you want to simulate}
 }
 \value{
 Recaptures of marked individuals for the sample size
