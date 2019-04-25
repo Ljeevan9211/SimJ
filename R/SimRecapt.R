@@ -20,8 +20,8 @@
 
 # Creating a function to return the recaptures
 SimRecapt <- function(N, M,c, iter = 1){ 	# N is population, M is marked ind and c is captured individuals in second trapping
-  Prob <- M/N 						                # this is the probability of recapture (marked individuals/total population)
-  Recapt <- rbinom(iter, c, Prob)		      # recaptures are binomal probabilities
+  Prob <- M/N 						   		# this is the probability of recapture (marked individuals/total population)
+  Recapt <- rbinom(iter, c, Prob)			# recaptures are binomal probabilities
   message("Total population: ", N, "     Marked individual: ", M)
   message("Sample size: ", c, "          Probability of recaptures: ", Prob)
   Recaptures <- data.frame(Recaptures = as.numeric(Recapt))
