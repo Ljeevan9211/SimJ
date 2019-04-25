@@ -13,6 +13,11 @@
 #' @examples # Using the custom function
 #' @examples PopEst(M, c, r)
 #' @examples PopEst(34, 24, 3) # for single survey
+#' @examples # A simple situation with population of 1000 with 88 marked and sample size 128
+#' @examples SimPop(1000, 88, 128)
+#' @examples # Save the recaptures and do a population estimation
+#' @examples r <- SimPop(300, 72, 50, 10)
+#' @examples PopEst(M, c, r)
 # Better function with built-in loop so that we don't have to use for function later.
 
 # creating a function to have all the values and calculate the normal and seber

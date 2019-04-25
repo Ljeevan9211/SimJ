@@ -9,6 +9,9 @@
 #' @export
 #' @examples # A simple situation with population of 1000 with 88 marked and sample size 128
 #' @examples SimPop(1000, 88, 128)
+#' @examples # Save the recaptures and do a population estimation
+#' @examples r <- SimPop(300, 72, 50, 10)
+#' @examples PopEst(M, c, r)
 
 # Creating a function to return the recaptures
 SimRecapt <- function(N, M,c, iter = 1){ 			# N is population, M is marked ind and c is captured individuals in second trapping

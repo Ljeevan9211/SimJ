@@ -27,4 +27,9 @@ M <- 54 # total marked ind. captured
 # Using the custom function
 PopEst(M, c, r)
 PopEst(34, 24, 3) # for single survey
+# A simple situation with population of 1000 with 88 marked and sample size 128
+SimPop(1000, 88, 128)
+# Save the recaptures and do a population estimation
+r <- SimPop(300, 72, 50, 10)
+PopEst(M, c, r)
 }

@@ -24,4 +24,7 @@ Gives the recaptures when given population, marked individuals and sample size
 \examples{
 # A simple situation with population of 1000 with 88 marked and sample size 128
 SimPop(1000, 88, 128)
+# Save the recaptures and do a population estimation
+r <- SimPop(300, 72, 50, 10)
+PopEst(M, c, r)
 }
